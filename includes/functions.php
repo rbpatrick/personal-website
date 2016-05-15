@@ -47,4 +47,28 @@ function redirect_to($location) {
     header("Location: " . $location);
     exit;
 }
+
+/*
+* Database connection functions
+* CRUD & confermation
+*/
+
+// Confirm query has brought back result
+function confirm_query($result_set) {
+    global $db;
+
+    if (!$result_set) {
+        die("Database query failed: " . mysqli_error($db));
+    }
+}
+
+// Query database
+function db_query($query) {
+    global $db;
+
+    $result = mysqli_query($db, $query);
+    confirm_query($result);
+    return $result;
+}
+
 ?>
