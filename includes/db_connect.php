@@ -1,12 +1,15 @@
 <?php
 
-// Database connection constants
+// Hostname connection constant
 define("HOSTNAME",  "patnet.ddns.net");
-define("USERNAME",  "rbpatrick");
-define("PASSWORD",  "Kirito95!");
-define("DBNAME",    "rbpatrick");
 
-$db = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DBNAME);
+// Database connection constants
+define("DB_USERNAME",  "rbpatrick");
+define("DB_PASSWORD",  "Kirito95!");
+define("DB_NAME",    "rbpatrick");
+
+// Database connect
+$db = mysqli_connect(HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Check connection to database
 if (!$db) {
