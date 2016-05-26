@@ -31,13 +31,14 @@ function render_url($page, $data = array()) {
     return $url;
 }
 
-function get_img($path) {
-    if(file_exists("img/{$path}.jpg")) {
-        $path = "img/{$path}.jpg";
+function get_img($image) {
+    $path = "img/".$image.".";
+    if(file_exists($path."jpg")) {
+        $path = $path."jpg";
         return $path;
     }
     else {
-        $path = "img/{$path}.png";
+        $path = $path."png";
         return $path;
     }
 }
